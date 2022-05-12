@@ -1,0 +1,6 @@
+{
+  "eslint.quiet": true,
+  "eslint.debug": true,
+  "eslint.format.enable": true,
+  "prettier.eslintIntegration": true
+}
