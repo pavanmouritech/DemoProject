@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { callAlbum, selectAlbumInfo } from '../../List/slice';
 import styles from './styles';
 
-const Album = () => {
+const Album = ({navigation}) => {
 
     const dispatch = useAppDispatch();
     const { isLoading, album, albumResponseError} = useAppSelector(selectAlbumInfo);
@@ -30,7 +30,7 @@ const Album = () => {
                         renderItem={
                             ({ item }) => {
                                 return (
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={()=>navigation.navigate('Profile',({ item: item }))}>
                                         <View style={styles.AlbumContainer}>
                                             <Text style={styles.id1}>
                                               {item.id}</Text>
