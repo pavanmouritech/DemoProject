@@ -4,20 +4,11 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { callAlbum, selectAlbumInfo } from '../../List/slice';
 import styles from './styles';
 
-const Album = ({navigation}) => {
-
-    const AlbumSchema = {
-        name: "album",
-        properties: {
-          id: "int",
-          title: "string",
-          url: "string",
-        },
-        primaryKey: "id",
-      };
+const Album = () => {
 
     const dispatch = useAppDispatch();
-    const { isLoading, album, albumResponseError } = useAppSelector(selectAlbumInfo);
+    const { isLoading, album, albumResponseError} = useAppSelector(selectAlbumInfo);
+    //console.log(albumResponseError);
     useEffect(() => {
         dispatch(callAlbum());
     }, [dispatch]);
@@ -29,7 +20,7 @@ const Album = ({navigation}) => {
 
         )
         : albumResponseError ? (<View style={styles.container}>
-            <Text style={styles.errorText}>{albumResponseError}</Text>
+            <Text style={styles.errorText}>{albumResponseError.error}</Text>
         </View>) :
             (
                 <>
@@ -39,7 +30,7 @@ const Album = ({navigation}) => {
                         renderItem={
                             ({ item }) => {
                                 return (
-                                    <TouchableOpacity onPress={() =>navigation.navigate('Profile',{ item: item })}>
+                                    <TouchableOpacity>
                                         <View style={styles.AlbumContainer}>
                                             <Text style={styles.id1}>
                                               {item.id}</Text>

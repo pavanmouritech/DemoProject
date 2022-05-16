@@ -5,7 +5,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.post.Accept = 'application/json';
 const config: AxiosRequestConfig = {
   baseURL: BASE_URL,
-  timeout: 1000,
+  timeout: 3000,
 };
 
 const instance = axios.create(config);
