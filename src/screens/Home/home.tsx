@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { ActivityIndicator, FlatList, Text, TouchableOpacity, View, Image } from "react-native";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { callAlbum, selectAlbumInfo } from '../../List/slice';
+import { callAlbum, selectAlbumInfo } from '../../redux/slice';
 import styles from './styles';
 
 const Album = ({navigation}) => {

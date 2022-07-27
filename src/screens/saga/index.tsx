@@ -1,4 +1,4 @@
-import watchAlbumRequest from "../../List/saga";
+import watchAlbumRequest from "../../redux/saga";
 import {all, fork} from 'redux-saga/effects';
 
 

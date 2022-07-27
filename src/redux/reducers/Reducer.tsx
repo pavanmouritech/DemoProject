@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import albumReducer from '../../List/slice';
+import albumReducer from '../slice';
 
 const rootReducer = combineReducers({
 

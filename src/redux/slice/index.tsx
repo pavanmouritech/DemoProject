@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import { RootState } from '../../redux/store/Store';
+import { RootState } from '../store/Store';
 import { Album, AlbumInfo, AlbumResponseError } from '../../screens/Types';
   
   export const initialState: AlbumInfo = {
