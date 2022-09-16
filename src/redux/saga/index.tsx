@@ -9,7 +9,7 @@ function* albumList(): SagaReturnType<any> {
   try {
     const requestParams: AxiosProps = {
       type: 'GET',
-      url: 'photos',
+      url: 'orders',
     };
 
     const response: AxiosResponse = yield call(requestApi, requestParams);

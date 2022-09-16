@@ -4,6 +4,10 @@ export interface Album {
     title:string;
     url:string;
     thumbnailUrl:string;
+    image:string;
+    description:string;
+    category:string;
+    price:string;
 }
 
 export type AlbumInfo ={

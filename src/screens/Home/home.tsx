@@ -1,14 +1,15 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useEffect } from "react";
 import { ActivityIndicator, FlatList, Text, TouchableOpacity, View, Image } from "react-native";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { callAlbum, selectAlbumInfo } from '../../redux/slice';
 import styles from './styles';
 
-const Album = ({navigation}) => {
-
+const Album = () => {
+    const navigation = useNavigation();
     const dispatch = useAppDispatch();
     const { isLoading, album, albumResponseError} = useAppSelector(selectAlbumInfo);
-    //console.log(albumResponseError);
+    console.log(albumResponseError);
     useEffect(() => {
         dispatch(callAlbum());
     }, [dispatch]);
@@ -30,24 +31,31 @@ const Album = ({navigation}) => {
                         renderItem={
                             ({ item }) => {
                                 return (
-                                    <TouchableOpacity onPress={()=>navigation.navigate('Profile',({ item: item }))}>
-                                        <View style={styles.AlbumContainer}>
-                                            <Text style={styles.id1}>
-                                              {item.id}</Text>
-                                            <Text style={styles.title1}>
-                                              {item.title}</Text>    
-                                             <Image style={styles.image}
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profile',({ item: item }))}>
+                                <View style={styles.AlbumContainer}>
+                                    <View style={{flexDirection: 'row'}}>
+                                            <Image style={styles.image}
                                                     source={{
-                                                        uri: item.url,
-                                                      }}
+                                                        uri: item.image,
+                                                    }}
                                             />
-                                        </View>
-                                    </TouchableOpacity>
-                                )
-                            }}
-                    />
-                </>
-            );
+                                    <Text style={styles.title1}>
+                                            {item.title}
+                                    </Text>
+                                    </View>       
+                                        <TouchableOpacity onPress={() => ('')}style={styles.price}>
+                                                <Text>{item.price}</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() =>('')}style={styles.category}>
+                                                <Text>{item.category}</Text>
+                                        </TouchableOpacity>
+                                </View> 
+                            </TouchableOpacity>
+                     )
+                }}
+            />
+        </>
+    );
 }
 
 export default Album;

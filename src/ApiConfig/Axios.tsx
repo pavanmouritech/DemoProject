@@ -1,6 +1,6 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
 
-const BASE_URL = 'https://jsonplaceholder.typicode.com/';
+const BASE_URL = 'https://fakestoreapi.free.beeceptor.com/';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.post.Accept = 'application/json';
 const config: AxiosRequestConfig = {

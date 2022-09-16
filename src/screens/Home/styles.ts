@@ -10,15 +10,24 @@ const styles = StyleSheet.create({
     AlbumContainer: {
          padding: 10
       },
-      id1:{
-        fontSize:20,
-      },
       title1: {
-        color:'#000',
-        fontSize:20,
+        fontSize: 22, 
+        padding: 10
       },
       image:{
-        height:100
+        width: 100, 
+        height: 150, 
+        borderRadius: 10,
+      },
+      price:{
+        alignItems:'center',
+        bottom:'30%',
+        right:'12%'
+      },
+      category:{
+        alignItems:'center',
+        bottom:'40%',
+        left:'12%',
       },
     errorText:{
         alignContent: 'center'
